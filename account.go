@@ -50,7 +50,6 @@ func (c *Client) ReadUserAccount(ctx context.Context, userID string) (*Account, 
 func (c *Client) ReadMe(ctx context.Context) (*Account, error) {
 	var account Account
 	if err := c.Get(ctx, fmt.Sprintf("/v1/app/accounts/%s", c.ClientID), nil, &account); err != nil {
-		fmt.Println(err.Error())
 		return nil, err
 	}
 	return &account, nil

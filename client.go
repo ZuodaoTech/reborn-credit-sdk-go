@@ -30,7 +30,6 @@ func (c *Client) Request(ctx context.Context) *resty.Request {
 func (c *Client) Get(ctx context.Context, uri string, params map[string]string, resp interface{}) error {
 	r, err := c.Request(ctx).SetQueryParams(params).Get(uri)
 	if err != nil {
-		fmt.Println(err)
 		if requestID := extractRequestID(r); requestID != "" {
 			return WrapErrWithRequestID(err, requestID)
 		}
