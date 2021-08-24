@@ -11,7 +11,7 @@ import (
 
 // Snapshot Snapshot
 type Snapshot struct {
-	ID         string          `json:"snapshot_id,omitempty"`
+	SnapshotID string          `json:"snapshot_id,omitempty"`
 	TraceID    string          `json:"trace_id,omitempty"`
 	AssetID    string          `json:"asset_id,omitempty"`
 	Amount     decimal.Decimal `json:"amount,omitempty"`
